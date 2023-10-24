@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'js_channel.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Web App'),
     );
   }
 }
@@ -111,6 +113,22 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),            const SizedBox(height: 18,),
+            ElevatedButton(
+              onPressed: () {
+                sendToastMessage();
+              },
+              /*style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF9F7BFF),
+              ),*/
+              child: const Text(
+                'Get User Profile',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
           ],
         ),
